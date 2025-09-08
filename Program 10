@@ -1,0 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct Node{int d;struct Node*next;};
+struct Node*head=NULL;
+void add(int x){struct Node*n=malloc(sizeof(struct Node));n->d=x;n->next=head;head=n;}
+void show(){for(struct Node*t=head;t;t=t->next) printf("%d->",t->d);printf("NULL\n");}
+int main(){add(10);add(20);add(30);show();}
